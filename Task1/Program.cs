@@ -22,3 +22,21 @@ int CountStringArray(string[] input)
     }
     return count;
 }
+
+string[] CreateNewArray(string[] myArray, int countWords)
+{
+    int size = myArray.Length;
+    string[] finalArray = new string[countWords];
+    int count = 0;
+    int maxLengthString = 3;
+    for (int i = 0; i < size; i++)
+    {
+        if (myArray[i].Length <= maxLengthString)
+        {
+            finalArray[count] = myArray[i];
+            count++;
+        }
+    }
+    return finalArray;
+}
+
