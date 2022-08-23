@@ -23,20 +23,25 @@ int CountStringArray(string[] input)
     return count;
 }
 
-string[] CreateNewArray(string[] myArray, int countWords)
+string[] CreateNewArray(string[] array, int countWords)
 {
-    int size = myArray.Length;
+    int size = array.Length;
     string[] finalArray = new string[countWords];
     int count = 0;
     int maxLengthString = 3;
     for (int i = 0; i < size; i++)
     {
-        if (myArray[i].Length <= maxLengthString)
+        if (array[i].Length <= maxLengthString)
         {
-            finalArray[count] = myArray[i];
+            finalArray[count] = array[i];
             count++;
         }
     }
     return finalArray;
 }
 
+PrintArray(array);
+
+string[] finalArray = CreateNewArray(array, CountStringArray(array));
+
+Console.WriteLine(PrintArray(finalArray));
